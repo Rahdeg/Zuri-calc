@@ -21,11 +21,45 @@ function calculate() {
   let expression = document.getElementById("output").value;
   let result;
   try {
-    result = eval(expression);
+    result = evaluateExpression(expression);
   } catch (error) {
     result = "Error";
   }
   document.getElementById("output").value = result;
+}
+
+function evaluateExpression(expression) {
+  // Split the expression into numbers and operators
+  let tokens = expression.split(/([-+*/])/);
+  // Remove empty strings from tokens array
+  tokens = tokens.filter((token) => token.trim() !== "");
+
+  // Perform calculations
+  let result = parseFloat(tokens[0]);
+  for (let i = 1; i < tokens.length; i += 2) {
+    let operator = tokens[i];
+    let operand = parseFloat(tokens[i + 1]);
+    switch (operator) {
+      case "+":
+        result += operand;
+        break;
+      case "-":
+        result -= operand;
+        break;
+      case "*":
+        result *= operand;
+        break;
+      case "/":
+        if (operand === 0) {
+          throw new Error("Division by zero");
+        }
+        result /= operand;
+        break;
+      default:
+        throw new Error("Invalid operator");
+    }
+  }
+  return result;
 }
 
 function operate(operator) {

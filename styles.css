@@ -15,8 +15,10 @@ body{
     margin: 0;
   }
 
-  h1 {
+  a {
     color: #CFD6E1;
+    font-size: 3.0em;
+    margin-bottom: 10px;
   }
   
   .calculator {

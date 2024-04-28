@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'CalculatorFont';
+    src: url('digital.ttf') format('truetype');
+    /* Specify the correct path to your downloaded calculator-style font file */
+}
+
+
 body{
     Background: #313131;
     display: flex;
@@ -11,7 +18,7 @@ body{
       width: 250px;
       margin: 0 auto;
     padding: 30px 30px;
-    padding-right:55px;
+    padding-right:50px;
     Background: #626369;
     border-radius:20px;
   }
@@ -20,7 +27,7 @@ body{
   .calculatorBox {
       width: 250px;
       margin: 0 auto;
-    padding-right:85px;
+    padding-right:80px;
     Background: white;
     
   }
@@ -32,10 +39,14 @@ body{
   
   table {
       width: 100%;
+      
   }
-  tr {
-      margin-bottom: 10px; 
-  }
+ 
+
+  td {
+    padding-right: 5px;
+    padding-left: 5px; /* Add space around each table cell */
+}
   
   
   button {
@@ -61,12 +72,15 @@ body{
   input[type="text"] {
       width: 100%;
       padding: 10px;
+      padding-right: 1px;
+      padding-left: 1px;
       margin-bottom: 10px;
       font-size: 1.2em;
       text-align: right;
     border-radius:10px;
     Background: #CFD6E1;
     box-shadow: 0px 5px 0px #C2C7D3;
+    font-family: 'CalculatorFont', Arial, sans-serif;
     
   }
   
